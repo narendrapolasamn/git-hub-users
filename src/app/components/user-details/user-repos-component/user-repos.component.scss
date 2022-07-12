@@ -1,0 +1,52 @@
+:host ::ng-deep{
+    .user-repo{
+        .user-detail{
+            display: flex;
+            flex-direction: row;
+            white-space: nowrap;
+            .details{
+                margin: 1rem;
+                label{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    text-align: right;
+                    line-height: 26px;
+                    margin-bottom: 10px;
+                }
+                span{
+                    display: flex;
+                    margin-right: 1rem;
+                }
+                a{
+                    cursor: pointer;
+                }
+                a.followers{
+                    margin-left: 1rem;
+                }
+            }
+           
+        }
+        .list-group{
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            .list-group-item{
+                border: 1px solid #5a5454a6;
+                margin: 0.5rem;
+                background-color: #9d9595c2;
+                border-radius: 0.25rem;
+                line-height: 2rem;
+                list-style: none;
+                padding: 0.25rem;
+                color: white;
+                
+                i{
+                    float: right;
+                    margin-top: 0.5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

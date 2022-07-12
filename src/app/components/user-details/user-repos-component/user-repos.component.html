@@ -1,0 +1,32 @@
+<div class="user-repo">
+    
+    <div *ngIf="userRepos" class="user-detail">
+        <img src="{{userRepos?.profileUrl}}">
+        <div class="details">
+            <label><b>Name : </b> <span> {{userRepos?.userName}}</span></label>
+            <label><b>Urls : </b>
+                <span>
+                    <a href="{{userRepos?.url}}">GitUrl</a>
+                    <a href="{{userRepos?.followersUrl}}" class="followers">Followers</a> 
+                </span>
+           </label>
+            <label><b>User Type : </b> 
+                <span>{{userRepos?.type}}</span>
+            </label>
+       </div>
+    </div>
+    <div class="list-group">
+        <label><b>My Favourite Repos : </b> </label>    
+        <ul>
+            <li class="list-group-item" *ngFor="let repo of userRepos.repos">
+                <span>{{repo?.name}}</span>
+                <favourite-component
+                [isFavourite]="repo.isFavourite"
+                (favouriteChange)="favouriteChange($event,repo)"
+                >
+
+                </favourite-component>
+            </li>
+        </ul>
+    </div>
+</div>

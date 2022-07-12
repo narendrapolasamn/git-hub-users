@@ -1,0 +1,11 @@
+<form class="">
+    <mat-form-field class="" appearance="outline">
+      <input matInput placeholder="Filter users....." [formControl]="autoCompleteCtrl" [matAutocomplete]="auto">
+      <a class="search-icon" (click)="search()"><i class="fa fa-search"></i></a>
+      <mat-autocomplete #auto="matAutocomplete" >
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option?.name" (onSelectionChange)="selectChange($event, option)">
+          {{option?.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>

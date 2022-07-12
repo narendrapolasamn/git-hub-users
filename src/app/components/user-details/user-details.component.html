@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="column">
+        <auto-complete-select *ngIf="users$ | async"
+        [data]="users$ | async"
+        (itemSelect)="selectChange($event)"
+        >  
+        </auto-complete-select>
+
+        <user-repos *ngIf="userRepos$ | async as userRepos"
+        [userRepos]="userRepos"
+        (favChanged)="favouriteRepoChange($event)"
+        >
+        </user-repos>
+    </div>
+</div>
