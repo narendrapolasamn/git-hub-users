@@ -33,6 +33,9 @@ export class AutocompleteComponent {
     }
   }
   search(){
-    this.itemSelect.emit(this.autoCompleteCtrl.value);
+    if(this.autoCompleteCtrl.value)
+    {
+      this.itemSelect.emit(this.autoCompleteCtrl.value);
+    }
   }
 }
